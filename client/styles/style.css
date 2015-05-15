@@ -503,6 +503,30 @@ body {
     }
 }
 
+/* search */
+#searchpage {
+    padding: 20px;
+    margin-top: 15px;
+}
+#search {
+  width: 50em;
+}
+
+#shareprice{
+  padding: 0 20px;
+}
+
+#buyshares {
+  width:150px;
+  padding-right: 150px;
+}
+#buyshares input {
+  padding-right: 0 10px;
+  width: 75%;
+}
+
+
+
 /*
 ========================  RESET 
 */
@@ -596,6 +620,7 @@ body {
 #user-widget .heading {
   color: #FFFFFF;
 }
+
 
 
 
