@@ -29,7 +29,11 @@ module.exports = function(app, express){
   app.get('/', auth.signInIfNotAuthenticated);
   app.use('/index.html', auth.signInIfNotAuthenticated);
   app.use(express.static(path.join(__dirname,'/../../client')));
-
+  app.use('/api/user', auth.authenticate, function(req, res, next)
+  {
+    res.json(req.session.passport.user);
+    next();
+  })
   app.use('/api/users', auth.authenticate, userRouter);
   app.use('/api/portfolio', auth.authenticate, portfolioRouter);
   app.use('/api/twitter', auth.authenticate, twitterRouter);
