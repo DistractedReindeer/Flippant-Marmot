@@ -38,12 +38,11 @@ module.exports = {
               res.send(404, "Sorry, bad Twitter handle - try again");
           } else {
               console.log("Data successfully retrieved from Twitter API");
-              console.log(tweets)
 
               twitterUserData['screen_name'] = hashTag;
               twitterUserData['name'] = hashTag;
-              twitterUserData['follower_count_at_query_time'] = 50;
-              twitterUserData['price_at_purchase'] = parseInt(50/1000000);
+              twitterUserData['follower_count_at_query_time'] = tweets.statuses.length;
+              
 
               twitterUserData.tweets = [];
               var sentimentSum = 0;
@@ -51,6 +50,7 @@ module.exports = {
                sentiment.getSentiment(tweet.text, function(val)
                 {
                   sentimentSum += val;
+                  tweet.sentiment = val;
                   twitterUserData.tweets.push(tweet);
                   next();
                 })
@@ -59,6 +59,7 @@ module.exports = {
                 var averageSentiment = sentimentSum/tweets.statuses.length;
                 twitterUserData['sentiment'] = averageSentiment;
                 console.log("Average sentiment Value", averageSentiment);
+                twitterUserData['price_at_purchase'] = tweets.statuses.length * averageSentiment;
                 res.json(twitterUserData);
                });
 
@@ -96,13 +97,13 @@ module.exports = {
         if (error) {
           console.log("Error getting data from Twitter API");
         } else {
+          console.log("#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{#{}}}}}}}}}}}}}}}}}}}}}}}}}}}")
           console.log("Data successfully retrieved from Twitter API");
 
           var followersCount = [];
           console.log(tweets);
           for(var i = 0; i < response.length; i++){
             followersCount.push(response[i].length);
-
           }
           callback(followersCount);
 
