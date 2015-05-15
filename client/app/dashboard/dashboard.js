@@ -7,9 +7,30 @@ angular.module('socialStock.dash', [])
     $scope.line = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       data: [
-        [65, 59, 80, 81, 56, 55, 40] ]
+        [65, 59, 80, 81, 56, 55, 40] ],
     }
 
+    $scope.chartColors = [{ 
+          "fillColor": "#434343",
+          "strokeColor": "#434343",
+          "pointColor": "rgba(220,220,220,1)",
+          "pointStrokeColor": "#fff",
+          "pointHighlightFill": "#fff",
+          "pointHighlightStroke": "rgba(151,187,205,0.8)",
+        }];
+
+    $scope.chartOptions = {
+          scaleShowGridLines: false,
+          responsive:true,
+          scaleShowGridLines : false,
+          scaleShowLabels: false,
+          showScale: false,
+          pointDot : true,
+          bezierCurveTension : 0.2,
+          pointDotStrokeWidth : 1,
+          pointHitDetectionRadius : 5,
+          datasetStroke : false 
+    }
 
 
   $scope.portfolio;
@@ -78,6 +99,8 @@ angular.module('socialStock.dash', [])
   $scope.refresh = function() {
     clientFactory.getPortfolio().then(function(data) {
       $scope.portfolio = data.data;
+      console.log("*************************")
+      console.dir($scope.portfolio);
 
       $scope.networth = 0;
       for (var i = 0; i < data.data.stocks.length; i++) {
