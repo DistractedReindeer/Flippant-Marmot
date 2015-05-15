@@ -4,7 +4,6 @@
 .line-legend{
   display: none;
 }
-
 /*
 ============ Chart Widget Directive http://bootsnipp.com/snippets/featured/awesome-ui-kit
 */
@@ -32,6 +31,30 @@ body {
     font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #8F7F70;
 }
+
+/* search */
+#searchpage {
+    padding: 20px;
+    margin-top: 15px;
+}
+#search {
+  width: 50em;
+}
+
+#shareprice{
+  padding: 0 20px;
+}
+
+#buyshares {
+  width:150px;
+  padding-right: 150px;
+}
+#buyshares input {
+  padding-right: 0 10px;
+  width: 75%;
+}
+
+
 
 
 
