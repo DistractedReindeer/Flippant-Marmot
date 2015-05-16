@@ -16,6 +16,7 @@ angular.module('socialStock', [
     .state('master', {
       url:'/master',
       templateUrl: 'app/views/master.html',
+      controller: 'DashController',
       }).state('master.home',{
         url:'/dashboard',
         controller: 'DashController',

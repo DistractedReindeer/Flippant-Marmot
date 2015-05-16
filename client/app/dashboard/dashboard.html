@@ -7,55 +7,6 @@
   color: #FFF;
 }
 </style>
-<div class ="row" style="background-color: #83CF1C; margin-bottom: 30px;">
-  <div class="row stats_overview">
-<div class="col-md-4"></div>
-<div id="user-widget" class="list-group col-md-2">
-            <div class="list-group-item heading">
-               <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ademilter/128.jpg">
-               <div class="text-wrap">
-                  <h4 class="list-group-item-heading">Richard Willams</h4>
-                  <p class="list-group-item-text">15,421 followers</p>
-               </div>
-               <div class="clearfix"></div>
-            </div>
-</div>
-
-
-
-
-
-
-
-         <div id="line-chart-widget" class="panel overview_panel col-md-3">
-            <div class="panel-body">
-                <div class="media col-md-12">
-                    <div class="list-block">
-                      <ul class="text-center legend">
-                         <li>
-                            <!-- <h3>{{ networth | number:2 }}</h3> -->
-                            <h3> 76476 </h3>
-                            NET WORTH
-                         </li>
-                          
-                          <li>
-                            <!-- <h3>{{ networth | number:2 }}</h3> -->
-                            <h3> 76476 </h3>
-                            NET WORTH
-                          </li>
-
-                         <li>
-                            <h3>{{portfolio.cash_balance | number:2}}</h3>
-                            CASH BALANCE
-                         </li>
-                      </ul>
-                   </div>
-               </div>
-            </div>
-            <br/>
-         </div>
-  </div>
-</div>
 
 <div class="container-fluid" style="width: 90%">
 <div class="row">
@@ -75,7 +26,7 @@
                   <ul class="text-center legend">
                      <li style="margin-right: 1px;">
                         CURRENT PRICE 
-                        <h2>{{ stock.current_price * stock.shares | number: 2}}</h2>
+                        <h2>{{ (stock.current_price * stock.shares)/10 | number: 0}}</h2>
                      </li>
                      <li >
                         SHARES 
@@ -83,11 +34,11 @@
                      </li>
                      <li  style="margin-left: 1px;">
                         CHANGE 
-                        <h2>{{(stock.current_price - (stock.follower_count_at_purchase/1000000)) * stock.shares |number:2}}</h2>
+                        <h2>{{((stock.current_price - (stock.follower_count_at_purchase/1000000)) * stock.shares) /10 | number:0}}</h2>
                      </li>
                      <li style="margin-left: 1px;">
                         TOTAL 
-                        <h2>{{ stock.current_price * stock.shares | number: 2}}</h2>
+                        <h2>{{ (stock.current_price * stock.shares)/10 | number: 0}}</h2>
                      </li>
                   </ul>
                </div>

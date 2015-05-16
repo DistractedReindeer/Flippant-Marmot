@@ -97,6 +97,14 @@ angular.module('socialStock.dash', [])
    * Asynchronous.
    */
   $scope.refresh = function() {
+
+    clientFactory.getUser().then(function(data) {
+      $scope.userData = data.data;
+      console.log("------------------------------------------------- USER data ---------");
+      console.dir($scope.userData);
+    });
+
+
     clientFactory.getPortfolio().then(function(data) {
       $scope.portfolio = data.data;
       console.log("*************************")

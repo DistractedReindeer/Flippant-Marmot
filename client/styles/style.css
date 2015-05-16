@@ -620,6 +620,13 @@ body {
 #user-widget .heading {
   color: #FFFFFF;
 }
+.navbar-default {
+  background-color: #83CF1C;
+  border: none;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+}
 
 
 
