@@ -1,4 +1,8 @@
-
+<style type="text/css">
+  body{
+    background-color: black;
+  }
+</style>
 <div class='container' id='searchpage'>
   <div class='row' id='search'>
     <div class='col-md-6 col-md-offset-3'>
@@ -41,6 +45,12 @@
                     BUY SHARES
                     <!-- <button ng-click='buyStock(shareCount)'>BUY</button> -->
                   </form>
+
+
+          <canvas id="bar" class="chart chart-bar" data="line.data"
+              labels="line.labels"></canvas>
+
+
                 </li>
               </ul>
             </div>
@@ -51,5 +61,3 @@
     </div>
   </div>
 </div>
-
-          

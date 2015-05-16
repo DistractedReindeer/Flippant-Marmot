@@ -69,13 +69,24 @@ angular.module('socialStock.factory', [])
                 return resp;
             });
     };
+    var getUser = function() {
+        return $http({
+                method: 'GET',
+                url: '/api/user',
+            })
+            .then(function(resp) {
+                return resp;
+            });
+    };
+
 
     //provides access to these functions to controllers
     return {
         getPortfolio: getPortfolio,
         getTwitterInfo: getTwitterInfo,
         buyStock: buyStock,
-        sellStock: sellStock
+        sellStock: sellStock,
+        getUser: getUser
     }
 
 });
