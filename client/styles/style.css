@@ -28,7 +28,17 @@ body {
     background-color: #FAFAFB;
 }
 
+.center{
+  text-align: center;
+}
+.large{
+  font-size: 3em;
+}
 
+.thick{
+  font-family: OstrichBlack;
+  font-size: .9em;
+}
 
 /*-- BS3 Modified Classes --*/
 .panel {
